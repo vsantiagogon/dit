@@ -1,17 +1,8 @@
-# DIT assignments. 
+# DIT's notebooks. 
 
-Jupyter notebooks for DIT modules.
+DIT modules notebooks.
 
-Student: Víctor Santiago González <D16128055@mydit.ie>
+* [Digital signal processing](https://github.com/vsantiagogon/dit/tree/master/dsp)
+  
+  - [Lab1: introduction](https://github.com/vsantiagogon/dit/blob/master/dsp/LAB%201.ipynb)
 
-DIT Nº: D16128055
-
-## Module folders: 
-
-*Speech & audio recognition* >> `/dsp`
-
-*Deep Learning* >> `/dl`
-
-*Machine Learning* >> `/ml`
-
-*Social Network Analysis* >> `/sna`
