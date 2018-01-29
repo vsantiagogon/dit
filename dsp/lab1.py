@@ -40,3 +40,17 @@ ex4[1, np.argmax(ex4[1, : ])] = 0
 
 plt.plot(ex4[0, :], ex4[1, :], 'r-x')
 plt.show()
+
+# Exercise 5: Create array of 201 sin samples
+
+freq = 2
+fs = 100
+
+x = np.arange(-1, 1 + 1/fs, 1/fs)
+A = np.sin(2*freq*x) 
+plt.plot(x, A)
+plt.show()
+
+print('Size of x:', x.size)
+print('Why 201? Because arange starts counting on 0?')
+
