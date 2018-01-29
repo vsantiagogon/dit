@@ -27,17 +27,16 @@ print('We have created a %d x %d matrix.\n' % ex3.shape)
 print('\n#### Exercise 4: calculate matrix elements.\n')
 
 ex4 = np.array([
-					[0, 1, 2, 3, 4, 5, 6, 7, 8, 0], 
-					[0, .1, .2, .3, 2, 1, 0, .1, .2, .3]
-				], 
+			[0 ,1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9] ,
+			[0 ,.1 ,.2 ,.3 ,2 ,1 ,0 ,.1 ,.2 ,.3]
+		], 
 				dtype = np.float32
 		)
 
-print(ex4.argmax())
-
-print(ex4[ex4.argmax()])
-
+print('\n The max value is %d', np.amax(ex4[1, :]) )
 print('\n then we set it to zero, and plot.');
 
+ex4[1, np.argmax(ex4[1, : ])] = 0
+
 plt.plot(ex4[0, :], ex4[1, :], 'r-x')
-#plt.show()
+plt.show()
