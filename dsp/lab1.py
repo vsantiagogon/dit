@@ -54,3 +54,9 @@ plt.show()
 print('Size of x:', x.size)
 print('Why 201? Because arange starts counting on 0?')
 
+# Exercise 6
+
+ex6 = plt.figure()
+plt.plot(x[x.size // 2+1 ::], A[A.size // 2 + 1 ::], 'o-r')
+plt.show()
+ex6.savefig('lab1fig6-1.pdf', bbox_inches='tight')
