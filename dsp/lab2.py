@@ -2,8 +2,6 @@ import numpy as np
 import librosa as lsa
 import matplotlib.pyplot as plt
 import sounddevice as sd
-import platform
-import os
 
 # Defines utility functions for Sounds: plot, save & play
 class Sound: 
@@ -23,7 +21,7 @@ class Sound:
 		plt.plot(self.time, self.wave)
 		plt.xlabel('time(s)')
 		plt.title(title)
-		plt.show()
+		plt.show(block=False)
 
 # Tones are defined as x(t) = 0.5 cos(2*pi*freq*t)
 class Signal(Sound): 
