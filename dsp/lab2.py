@@ -43,6 +43,12 @@ def load(name):
 	duration = lsa.core.get_duration(y = wave, sr = SR)
 	return Sound(duration, wave)
 
+# Create a Sound from WAV file
+def load(name):
+	wave, SR = lsa.core.load(name, sr = 44100)
+	duration = lsa.core.get_duration(y = wave, sr = SR)
+	return Sound(duration, wave)
+
 # Tones are defined as x(t) = 0.5 cos(2*pi*freq*t)
 class Signal(Sound): 
 
