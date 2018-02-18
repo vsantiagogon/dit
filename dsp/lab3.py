@@ -1,5 +1,6 @@
 import numpy as np 
 import librosa as lsa
+import librosa.display as lsd
 import matplotlib.pyplot as plt
 import sounddevice as sd
 from scipy import signal
@@ -52,16 +53,10 @@ class Sound:
 	def window(self, samples):
 		return self.wave[0:samples] * np.hamming(samples);
 
-	def fft(self, title = '', samples = 0):
-		
-		if samples == 0:
-			samples = self.SR
-		
-		plt.figure()
-		plt.plot(fft(self.wave)[0:samples])
-		plt.title(title)
+	def specshow(self):
+		D = lsa.amplitude_to_db(lsa.stft(self.wave), ref=np.max)
+		lsd.specshow(D, y_axis='linear')
 		plt.show();
-		return self
 
 
 def Fourier (signal, samples, title = ''):
@@ -108,7 +103,6 @@ def main():
 	Fourier(s, 1024, title = 'FFT 1024 samples')
 	Fourier(s, 512,  title = 'FFT 512 samples')
 	Fourier(s, 256,  title = 'FFT 256 samples')
-	#s.fft('FFT All samples').fft('FFT 1024 samples', 1024).fft('FFT 512 samples', 512).fft('FFT 256 samples', 256)
 
 	print('''
 	################################################################
@@ -145,6 +139,15 @@ def main():
 
 	s   = Impulse(1, 100)
 	I100 = Sound(1, s.window(1024)).plot('', 1024)
+
+	print('''
+	################################################################
+	QUESTION 5: STFT.
+	################################################################
+	''')
+
+
+
 
 
 if __name__ == '__main__':
