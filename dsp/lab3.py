@@ -54,10 +54,19 @@ class Sound:
 		return self.wave[0:samples] * np.hamming(samples);
 
 	def specshow(self):
-		D = lsa.amplitude_to_db(lsa.stft(self.wave), ref=np.max)
-		lsd.specshow(D, y_axis='linear')
-		plt.show();
-
+		S = np.abs(lsa.stft(self.wave))
+		plt.figure()
+		plt.subplot(2, 1, 1)
+		lsd.specshow(S**2, sr = self.SR, y_axis = 'log')
+		plt.colorbar()
+		plt.title('Power Spectrum')
+		plt.subplot(2, 1, 2);
+		lsd.specshow(lsa.power_to_db(S**2, ref = np.max), sr = self.SR,
+			y_axis = 'log', x_axis = 'time')
+		plt.colorbar(format = '%+2.0f dB')
+		plt.title('Log-Power spectrum')
+		plt.tight_layout()
+		plt.show()
 
 def Fourier (signal, samples, title = ''):
 	plt.figure()
@@ -105,6 +114,10 @@ def main():
 	Fourier(s, 256,  title = 'FFT 256 samples')
 
 	print('''
+		Each graph has the same shape, but covers a shorter timespan.
+		''')
+
+	print('''
 	################################################################
 	QUESTION 2: FFT and WINDOW for the sum.
 	################################################################
@@ -124,6 +137,10 @@ def main():
 
 	sig = Sound(1, s3.window(256))
 	Fourier(sig, 256, title="FFT after hamming with 256 samples")
+
+	print('''
+		The sorter the number of samples, the smoother the graph is.
+		''')
 
 	print('''
 	################################################################
@@ -146,7 +163,8 @@ def main():
 	################################################################
 	''')
 
-
+	s = load('example.wav')
+	s.specshow()
 
 
 
