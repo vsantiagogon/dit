@@ -1,13 +1,13 @@
+# Non-annoying package loading
 packages = function (pkgs) {
   for (pkg in pkgs) {
     if (!(pkg %in% installed.packages())) install.packages(pkg);
     library(pkg, character.only = T);
   } 
 }
-
 packages(c('dataQualityR','class', 'dplyr', 'ggplot2')) #gmodels
 
-
+# Load the dataset
 data = read.csv('repos/dit/ml/train.csv', stringsAsFactors = FALSE, na.strings = 'NA')
 
 # DATA QUALITY REPORT. 
@@ -82,4 +82,5 @@ predictions <- data.frame(
   'Survived' = knn(select(train, -c(PassengerId)), select(test, -c(PassengerId)), train$Survived, k=10)
 ) %>% arrange(ID)
 
+# Finally, we show the results
 View(predictions)
