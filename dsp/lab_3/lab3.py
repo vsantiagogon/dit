@@ -70,7 +70,8 @@ class Sound:
 
 def Fourier (signal, samples, title = ''):
 	plt.figure()
-	plt.plot(fft(signal.wave)[0:samples]);
+	x = signal.wave[0:samples]
+	plt.plot(np.abs(fft(x)));
 	plt.title(title);
 	plt.show();
 
