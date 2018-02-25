@@ -1,0 +1,39 @@
+---
+title: "Machine Learning. RLab"
+author: "Víctor Santiago"
+date: "25 February 2018"
+output: 
+  html_document: 
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE);
+
+DATA = read.csv('../../datasets/Titanic.csv')
+source('../utils/Setup.R');
+
+Setup$getPkgs('dataQualityR');
+
+source('quality.R')
+```
+
+<h3>Titanic Data Overview</h3>
+
+<span id="data_titanic" class="table">
+```{r, echo=FALSE}
+knitr::kable(head(DATA), format = "html")
+```
+</span> 
+
+<h3>Data Quality Report</h3>
+
+<h4>Numerical data</h4>
+<span id="quality_numeric" class="table">
+```{r, echo=FALSE}
+knitr::kable(DQ(DATA)$Num, format = "html")
+```
+</span>
+
+
+
