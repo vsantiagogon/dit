@@ -50,6 +50,7 @@ for idx,fname in enumerate(phonemefilenames):
     #rpeaks=abs(spectrum.real)
     rpeaks=abs(np.real(spectrum))
     freq_res = sr / 2 / (len(freqs) - 1)
+    print(freq_res)
     indexes = peakutils.indexes(rpeaks, thres=0.02/max(rpeaks), min_dist=130/freq_res)
 
     indexes.sort()
