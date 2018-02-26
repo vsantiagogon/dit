@@ -1,3 +1,4 @@
+
 # Closure!
 DQ = (function (Setup) {
   
@@ -10,8 +11,8 @@ DQ = (function (Setup) {
     DQ.categorical = read.csv(paste(tempdir(), '/dq_cat.csv', sep= ''))
     
     # Don't pollute the local system
-    file.remove(paste(tempdir(), '/dq_num.csv', sep= ''));
-    file.remove(paste(tempdir(), '/dq_cat.csv', sep= ''));
+    #file.remove(paste(tempdir(), '/dq_num.csv', sep= ''));
+    #file.remove(paste(tempdir(), '/dq_cat.csv', sep= ''));
     
     return (list(
       Num = DQ.numerical,
