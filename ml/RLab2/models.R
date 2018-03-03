@@ -2,9 +2,10 @@ ROOT = 'repos/dit/ml/'
 
 source(paste(ROOT, 'utils/Setup.R', sep = ''));
 
-Setup$getPkgs(c('C50', 'dataQualityR', 'dplyr'));
+Setup$getPkgs(c('C50', 'dataQualityR', 'dplyr', 'SDMTools'));
 
 DATA = read.csv(paste(ROOT, '../datasets/UCI_Credit_Card.csv', sep = ''), stringsAsFactors = F);
+
 
 Asses = function (test, pred) {
   # Finally, we show the results, using the confusion matrix.
@@ -32,6 +33,6 @@ test_labels = data$test$default.payment.next.month %>% as.factor;
 
 model <- C5.0(train, train_labels);
 
-pred <- predict(model, test_labels);
+pred <- predict(model, test);
 
 Asses(test_labels, pred);
