@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Article
+% LaTeX Template
+% Version 2.0 (28/2/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@LaTeXTemplates.com)
+% Frits Wenneker
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt, a4paper, twocolumn]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
+
+\input{structure.tex} % Specifies the document structure and loads requires packages
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{What next for Machine Learning?} % The article title
+
+\author{
+	\authorstyle{Automating the automation} % Authors
+	\newline\newline % Space before institutions
+	\keywords{V\'ictor Santiago Gon\'alez. D16128055}\\ % Institution 1
+}
+
+% Example of a one line author/institution relationship
+%\author{\newauthor{John Marston} \newinstitution{Universidad Nacional Autónoma de México, Mexico City, Mexico}}
+
+\date{} % Add a date here if you would like one to appear underneath the title block, use \today for the current date, leave empty for no date
+
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\postauthor{
+
+	\begin{center}
+		\textsc{\textbf{Abstract}}
+	\end{center}
+	
+	\input{sections/abstract.tex}
+
+	\par\vspace{10pt}\HorRule
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+\thispagestyle{firstpage} % Apply the page style
+
+%-------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%-------------------------------------------------------------------------------
+
+	%-------------------------------------------------------------------------------
+	%	INTRODUCTION
+	%-------------------------------------------------------------------------------
+
+	\section{Introduction}
+
+	\input{sections/introduction.tex}
+
+	%-------------------------------------------------------------------------------
+	%	RELATED
+	%-------------------------------------------------------------------------------
+
+	\section{Related Works}
+
+	\input{sections/related.tex}
+
+	%-------------------------------------------------------------------------------
+	%	METHODOLOGY
+	%-------------------------------------------------------------------------------
+
+	\section{Methodology}
+
+	\input{sections/methodology.tex}
+
+	%-------------------------------------------------------------------------------
+	%	EXPERIMENTATION & RESULTS
+	%-------------------------------------------------------------------------------
+
+	\section{Experimentation and results}
+
+	\input{sections/results.tex}
+
+	%-------------------------------------------------------------------------------
+	%	DISCUSSION
+	%-------------------------------------------------------------------------------
+
+	\section{Discussion}
+
+	\input{sections/discussion.tex}
+
+	%-------------------------------------------------------------------------------
+	%	CONCLUSION
+	%-------------------------------------------------------------------------------
+
+	\section{Conclusion}
+
+	\input{sections/conclusions.tex}
+
+
+% o Data gathering, data preprocessing and description of the dataset (if applicable)
+% o Research Methodology used
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
