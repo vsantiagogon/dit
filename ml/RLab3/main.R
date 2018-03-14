@@ -9,8 +9,9 @@ DATA = read.csv(paste(ROOT, '../datasets/lab3.csv', sep = ''), stringsAsFactors 
 source( paste( ROOT, 'RLab2/quality.R', sep = '' ) );
 
 # DATA QUALITY REPORT.
-#  Report <- DQ(DATA);
-#  View(Report$Cat);
+  Report <- DQ(DATA);
+  View(Report$Cat);
+  View(Report$Num);
 
 # DATA PREPARATION.
   
@@ -21,8 +22,6 @@ DATA[is.na(DATA$normalized.losses) == T, ]$normalized.losses = mean(as.numeric(D
     
 # REJECT ROWS IN COLUMNS WITH VERY FEW NA's miss ~2% -> reject NA's.
 DATA = filter(DATA, !is.na(bore) & !is.na(num.of.doors) & !is.na(num.of.doors) & !is.na(stroke) & !is.na(horsepower) & !is.na(peak.rpm) & !is.na(price));
-  
-# DATA QUALITY REPORT.
-Report <- DQ(DATA);
-View(Report$Cat);
 
+# DRAW ALL PAY_* VARIABLES RELATIONS.
+select(DATA, normalized.losses, wheel.base, length, width, height, curb.weight, engine.size, fuel.system, bore, compression.ratio, horsepower, peak.rpm, city.mpg, highway.mpg, price) %>% pairs( upper.panel = Setup$cors );
