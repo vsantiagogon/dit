@@ -1,0 +1,65 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Reference1}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Hawthorn}{H.}%
+     {C.~J.}{C.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Weber}{W.}%
+     {K.~P.}{K.~P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Scholten}{S.}%
+     {R.~E.}{R.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HCJWKPSRE1}
+  \strng{fullhash}{HCJWKPSRE1}
+  \field{labelyear}{2001}
+  \field{sortinit}{H}
+  \field{abstract}{%
+  We have developed an enhanced Littrow configuration extended cavity diode
+  laser (ECDL) that can be tuned without changing the direction of the output
+  beam. The output of a conventional Littrow ECDL is reflected from a plane
+  mirror fixed parallel to the tuning diffraction grating. Using a free-space
+  Michelson wavemeter to measure the laser wavelength, we can tune the laser
+  over a range greater than 10 nm without any alteration of alignment.%
+  }
+  \field{number}{12}
+  \field{pages}{4477\bibrangedash 4479}
+  \field{title}{Littrow Configuration Tunable External Cavity Diode Laser with
+  Fixed Direction Output Beam}
+  \verb{url}
+  \verb http://link.aip.org/link/?RSI/72/4477/1
+  \endverb
+  \field{volume}{72}
+  \field{journaltitle}{Review of Scientific Instruments}
+  \field{month}{12}
+  \field{year}{2001}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

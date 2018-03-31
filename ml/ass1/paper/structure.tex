@@ -111,7 +111,7 @@
 
 \newcommand{\authorstyle}[1]{{\large\usefont{OT1}{phv}{b}{n}\color{primary}#1}} % Authors style (Helvetica)
 
-\newcommand{\keywords}[1]{{\footnotesize\usefont{OT1}{phv}{m}{sl}\color{Black}#1}\vspace{5pt} \hfill \today{}} % Institutions style (Helvetica)
+\newcommand{\keywords}[1]{Keywords: {\footnotesize\usefont{OT1}{phv}{m}{sl}\color{Black}#1}\vspace{5pt}} % Institutions style (Helvetica)
 
 \usepackage{titling} % Allows custom title configuration
 
@@ -120,7 +120,7 @@
 \pretitle{
 	\vspace{-30pt} % Move the entire title section up
 	\HorRule\vspace{10pt} % Horizontal rule before the title
-	\fontsize{30}{36}\usefont{OT1}{phv}{b}{n}\selectfont % Helvetica
+	\fontsize{32}{36}\usefont{OT1}{phv}{b}{n}\selectfont % Helvetica
 	\color{primary} % Text colour for the title and author(s)
 }
 
@@ -159,7 +159,7 @@
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[backend=bibtex]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
 \addbibresource{example.bib} % The filename of the bibliography
 

@@ -32,6 +32,11 @@ Setup = (function (path) {
       
     },
     
+    getMode = function(v) {
+      uniqv = unique(v)
+      uniqv[which.max(tabulate(match(v, uniqv)))]
+    },
+    
     cors = function(x, y, digits = 2, cex.cor, ...) {
       usr <- par("usr"); on.exit(par(usr))
       par(usr = c(0, 1, 0, 1))
