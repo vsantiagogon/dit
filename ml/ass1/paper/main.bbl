@@ -60,6 +60,25 @@
   \field{year}{2015}
 \endentry
 
+\entry{dream}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {generator}{g.}%
+     {Deep}{D.}%
+     {dream}{d.}%
+     {}{}}%
+  }
+  \strng{namehash}{gDd1}
+  \strng{fullhash}{gDd1}
+  \field{sortinit}{G}
+  \field{title}{Deep dream generator}
+  \verb{url}
+  \verb https://deepdreamgenerator.com/
+  \endverb
+  \field{year}{2017}
+  \field{urlyear}{2017}
+\endentry
+
 \entry{gorilla}{online}{}
   \name{author}{1}{}{%
     {{}%
@@ -78,25 +97,6 @@
   \endverb
   \field{year}{2015}
   \field{urlyear}{2015}
-\endentry
-
-\entry{dream}{online}{}
-  \name{author}{1}{}{%
-    {{}%
-     {Hadad}{H.}%
-     {Yaron}{Y.}%
-     {}{}%
-     {}{}}%
-  }
-  \strng{namehash}{HY1}
-  \strng{fullhash}{HY1}
-  \field{sortinit}{H}
-  \field{title}{30 amazing applications of neural networks}
-  \verb{url}
-  \verb http://www.yaronhadad.com/deep-learning-most-amazing-applications/
-  \endverb
-  \field{year}{2017}
-  \field{urlyear}{2017}
 \endentry
 
 \entry{darpa}{online}{}
