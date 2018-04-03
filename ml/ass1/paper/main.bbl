@@ -16,47 +16,337 @@
   {}
 \endgroup
 
-\entry{Reference1}{article}{}
+\entry{caption}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Brownlee}{B.}%
+     {Jason}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BJ1}
+  \strng{fullhash}{BJ1}
+  \field{sortinit}{B}
+  \field{title}{8 inspirational applications of deep learning}
+  \verb{url}
+  \verb https://machinelearningmastery.com/inspirational-applications-deep-lear
+  \verb ning/
+  \endverb
+  \field{year}{2016}
+  \field{urlyear}{2016}
+\endentry
+
+\entry{panda}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {G.}{G.}%
+     {Ian~J.}{I.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Jonathon~S.}{J.~S.}%
+     {Christian~S.}{C.~S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GIJJSCS1}
+  \strng{fullhash}{GIJJSCS1}
+  \field{sortinit}{G}
+  \field{title}{Explaining and Harnessing Adversarial Examples}
+  \verb{url}
+  \verb https://arxiv.org/abs/1412.6572
+  \endverb
+  \field{journaltitle}{Arxiv.org}
+  \field{year}{2015}
+\endentry
+
+\entry{gorilla}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Guardian}{G.}%
+     {The}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GT1}
+  \strng{fullhash}{GT1}
+  \field{sortinit}{G}
+  \field{title}{Google says sorry for racist auto-tag in photo app}
+  \verb{url}
+  \verb https://www.theguardian.com/technology/2015/jul/01/google-sorry-racist-
+  \verb auto-tag-photo-app
+  \endverb
+  \field{year}{2015}
+  \field{urlyear}{2015}
+\endentry
+
+\entry{dream}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Hadad}{H.}%
+     {Yaron}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{HY1}
+  \strng{fullhash}{HY1}
+  \field{sortinit}{H}
+  \field{title}{30 amazing applications of neural networks}
+  \verb{url}
+  \verb http://www.yaronhadad.com/deep-learning-most-amazing-applications/
+  \endverb
+  \field{year}{2017}
+  \field{urlyear}{2017}
+\endentry
+
+\entry{darpa}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {John~Launchbury}{J.~L.}%
+     {DARPA}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{JLD1}
+  \strng{fullhash}{JLD1}
+  \field{sortinit}{J}
+  \field{title}{A DARPA perspective on artificial intelligence}
+  \verb{url}
+  \verb https://www.darpa.mil/attachments/AIFull.pdf
+  \endverb
+  \field{year}{2017}
+  \field{urlyear}{2017}
+\endentry
+
+\entry{topology}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {John~Launchbury}{J.~L.}%
+     {DARPA}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{JLD1}
+  \strng{fullhash}{JLD1}
+  \field{sortinit}{J}
+  \field{title}{Neural Networks, Manifolds, and Topology}
+  \verb{url}
+  \verb http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/
+  \endverb
+  \field{year}{2014}
+  \field{urlyear}{2014}
+\endentry
+
+\entry{code}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Karpathy}{K.}%
+     {Andrej}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KA1}
+  \strng{fullhash}{KA1}
+  \field{sortinit}{K}
+  \field{title}{Software 2.0}
+  \verb{url}
+  \verb https://medium.com/@karpathy/software-2-0-a64152b37c35
+  \endverb
+  \field{year}{2017}
+  \field{urlyear}{2017}
+\endentry
+
+\entry{snake}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Korolev}{K.}%
+     {Slava}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KS1}
+  \strng{fullhash}{KS1}
+  \field{sortinit}{K}
+  \field{title}{Neural Network to play a snake game}
+  \verb{url}
+  \verb https://towardsdatascience.com/today-im-going-to-talk-about-a-small-pra
+  \verb ctical-example-of-using-neural-networks-training-one-to-6b2cbd6efdb3
+  \endverb
+  \field{year}{2017}
+  \field{urlyear}{2017}
+\endentry
+
+\entry{age}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Kurzweil}{K.}%
+     {Ray}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Viking Press}%
+  }
+  \strng{namehash}{KR1}
+  \strng{fullhash}{KR1}
+  \field{sortinit}{K}
+  \field{subtitle}{When computers exceed human intelligence}
+  \field{title}{The age of spirtitual machines}
+  \field{year}{1999}
+\endentry
+
+\entry{law}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Kurzweil}{K.}%
+     {Ray}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KR1}
+  \strng{fullhash}{KR1}
+  \field{sortinit}{K}
+  \field{title}{The law of accelerating returns}
+  \verb{url}
+  \verb http://www.kurzweilai.net/the-law-of-accelerating-returns
+  \endverb
+  \field{year}{2001}
+  \field{urlyear}{2001}
+\endentry
+
+\entry{singularity}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Kurzweil}{K.}%
+     {Ray}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Viking}%
+  }
+  \strng{namehash}{KR1}
+  \strng{fullhash}{KR1}
+  \field{sortinit}{K}
+  \field{subtitle}{When humans trascend biology}
+  \field{title}{The singularity is near}
+  \field{year}{2005}
+\endentry
+
+\entry{pilot}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {labs}{l.}%
+     {Waverly}{W.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{lW1}
+  \strng{fullhash}{lW1}
+  \field{sortinit}{L}
+  \field{title}{Waverly labs pilot earphones}
+  \verb{url}
+  \verb https://www.waverlylabs.com/pilot-translation-kit/
+  \endverb
+  \field{year}{2018}
+  \field{urlyear}{2018}
+\endentry
+
+\entry{back}{article}{}
   \name{author}{3}{}{%
     {{}%
-     {Hawthorn}{H.}%
-     {C.~J.}{C.~J.}%
+     {Rumelhart}{R.}%
+     {David~E.}{D.~E.}%
      {}{}%
      {}{}}%
     {{}%
-     {Weber}{W.}%
-     {K.~P.}{K.~P.}%
+     {Hinton}{H.}%
+     {Geoffrey~E.}{G.~E.}%
      {}{}%
      {}{}}%
     {{}%
-     {Scholten}{S.}%
-     {R.~E.}{R.~E.}%
+     {Williams}{W.}%
+     {Ronald~J.}{R.~J.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{HCJWKPSRE1}
-  \strng{fullhash}{HCJWKPSRE1}
-  \field{labelyear}{2001}
-  \field{sortinit}{H}
-  \field{abstract}{%
-  We have developed an enhanced Littrow configuration extended cavity diode
-  laser (ECDL) that can be tuned without changing the direction of the output
-  beam. The output of a conventional Littrow ECDL is reflected from a plane
-  mirror fixed parallel to the tuning diffraction grating. Using a free-space
-  Michelson wavemeter to measure the laser wavelength, we can tune the laser
-  over a range greater than 10 nm without any alteration of alignment.%
-  }
-  \field{number}{12}
-  \field{pages}{4477\bibrangedash 4479}
-  \field{title}{Littrow Configuration Tunable External Cavity Diode Laser with
-  Fixed Direction Output Beam}
+  \strng{namehash}{RDEHGEWRJ1}
+  \strng{fullhash}{RDEHGEWRJ1}
+  \field{sortinit}{R}
+  \field{pages}{533\bibrangedash 536}
+  \field{title}{Learning representations by back-propagating errors}
   \verb{url}
-  \verb http://link.aip.org/link/?RSI/72/4477/1
+  \verb doi:10.1038/323533a0
   \endverb
-  \field{volume}{72}
-  \field{journaltitle}{Review of Scientific Instruments}
-  \field{month}{12}
-  \field{year}{2001}
+  \field{volume}{323}
+  \field{journaltitle}{Nature}
+  \field{year}{1986}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{adversarial}{article}{}
+  \name{author}{6}{}{%
+    {{}%
+     {S.}{S.}%
+     {Christian}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Z.}{Z.}%
+     {Wojciech}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {S.}{S.}%
+     {Ilya}{I.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {B.}{B.}%
+     {Joan}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {E.}{E.}%
+     {Dumitru}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ian~Goodfellow}{I.~G.}%
+     {Rob~Fergus}{R.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{SC+1}
+  \strng{fullhash}{SCZWSIBJEDIGRF1}
+  \field{sortinit}{S}
+  \field{title}{Intriguing properties of neural networks}
+  \verb{url}
+  \verb https://arxiv.org/abs/1312.6199
+  \endverb
+  \field{journaltitle}{Arxiv.org}
+  \field{year}{2014}
+\endentry
+
+\entry{interview}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Worldk}{W.}%
+     {Computer}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WC1}
+  \strng{fullhash}{WC1}
+  \field{sortinit}{W}
+  \field{title}{Interview with futurist Ray Kurzweil}
+  \verb{url}
+  \verb https://www.computerworld.com/article/2477417/smartphones/the-kurzweil-
+  \verb interview--continued--portable-computing--virtual-reality--immortality-
+  \verb -and.html
+  \endverb
+  \field{year}{2007}
+  \field{urlyear}{2007}
 \endentry
 
 \lossort
