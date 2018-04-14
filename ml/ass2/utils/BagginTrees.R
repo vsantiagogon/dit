@@ -10,24 +10,26 @@ DATA = Setup$getData(paste(ROOT, 'dataset/spam.csv', sep = ''))
 SETS = Setup$split(DATA);
 labels <- setdiff(names(SETS$train), 'spam');
 
+##########################################################################
+# BAGGING WITH TREES.
+##########################################################################
 
-##########################################################################
-# BAGGING WITH LOGISTIC REGRESSION
-##########################################################################
+fit   <- rpart(spam ~ ., data=SETS$train, method="class");
+probs <- predict(fit, SETS$test[, labels], method='class');
+pre   <- ifelse(probs[, 2] - probs[ , 1] > 0, 1, 0);
+
+auc(SETS$test$spam, pre) %>% print;
+
 
 registerDoParallel(cl);
 
 predictions <- foreach(m = 1: 4, .combine = cbind) %dopar% {
+  Setup$getPkgs('rpart');
   sample = sample(nrow(SETS$train), size=floor((nrow(SETS$train)/ 20)))
-  model <- lm(spam ~ ., data = SETS$train[sample, ]);
-  predictions  <- data.frame( predict( model, SETS$test[, labels]) );
+  model <- rpart(spam ~ ., data=SETS$train[sample, ], method="class");
+  probs <- predict(model, SETS$test[, labels]);
+  predictions  <- data.frame( ifelse(probs[, 2] - probs[, 1] > 0, 1, 0) );
 }
 stopCluster(cl);
 
 auc(SETS$test$spam, rowMeans(ifelse(predictions > 0.5, 1, 0)) ) %>% print;
-
-m <- lm(spam ~ ., data = SETS$train);
-p <- ifelse( predict(m, SETS$test[, labels]) > 0.5, 1, 0);
-
-auc(SETS$test$spam, p) %>% print;
-
