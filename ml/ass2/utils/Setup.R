@@ -15,6 +15,14 @@ Setup = (function (path) {
       return ((x - min(x)) / (max(x) - min(x))) 
     },
     
+    split = function (df, percentage = 0.7) {
+      split = sample(nrow(df), floor(percentage*nrow(DATA)));
+      return (list(
+        train = df[split, ],
+        test  = df[-split, ]
+      ));
+    },
+    
     getData = function (path) {
       return (read.csv(path));
     }
