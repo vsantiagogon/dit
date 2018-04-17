@@ -12,9 +12,8 @@ Algo = (function (path) {
       
       predictions <- foreach(m = 1 : iterations, .combine = cbind) %dopar% {
         
-        sample = sample(nrow( train ), size = floor((nrow( train )/ 20)))
-        model <- fn(spam ~ ., data = train[sample, ] );
-        predictions <- ifelse( predict(model, test[, labels]) > 0.5, 1, 0);
+        sample = sample(nrow( train ), size = floor((nrow( train )/ 20)));
+        predictions <- fn(train[sample, ], test);
       }
       stopCluster(cl);
       
