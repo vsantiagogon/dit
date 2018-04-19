@@ -50,6 +50,6 @@ Utils$asses(SETS$test$spam , x);
 
 print('--------------------------------');
 
-m = lm(spam ~ ., data = SETS$train);
+m = rpart(spam ~ ., data = SETS$train);
 p = ifelse( predict(m, SETS$test[ , labels]) > 0.5, 1, 0);
 Utils$asses(SETS$test$spam, p);
