@@ -37,8 +37,6 @@ Algo = (function (path) {
         # That's why we do this silly thing of calculate predictions over the train dataset.
         preds = classifier(train);
         preds_test = classifier(test);
-        #preds      = ifelse(predict(model, train[, labels]) > 0, 1, -1 );
-        #preds_test = ifelse(predict(model, test[, labels]) > 0, 1, -1 );
         
         ind = data.frame(actual = train$spam, preds = preds) %>% mutate(ind = ifelse(actual != preds, 1, 0)) %>% select(ind);
         

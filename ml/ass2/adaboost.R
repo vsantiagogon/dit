@@ -5,13 +5,14 @@ source(paste(ROOT, 'common/Algo.R', sep = ''));
 
 Utils$getPkgs(c('foreach',  'doParallel', 'rpart',  'pROC', 'dplyr', 'SDMTools'));
 
-DATA = read.csv(paste(ROOT, 'dataset/spam.csv', sep = ''));
+DATA = read.csv(paste(ROOT, 'datasets/spam.csv', sep = ''));
 DATA = DATA[sample(nrow(DATA)), ];
 
 SETS = Utils$split(DATA);
 
 tree = function (train, weights = c(), ada = FALSE) {
   labels = setdiff(names(train), 'spam');
+  library('rpart')
   if (ada) {
     fit = rpart(spam ~ ., data = train, weights = weights)
   } else {
@@ -27,12 +28,49 @@ tree = function (train, weights = c(), ada = FALSE) {
   })
 }
 
-x = Algo$adaboost(SETS$train, SETS$test, 100, tree);
+linear = function (train, weights = c(), ada = FALSE) {
+  labels = setdiff(names(train), 'spam');
+  
+  if (ada) {
+    train$spam = ifelse(train$spam == -1, 0, 1);
+    fit = glm(spam ~., data = train, weights = weights)
+  } else {
+    fit = glm(spam ~ ., data = train);
+  }
+  
+  return (function (test) {
+    if (ada) {
+      test$spam = ifelse(test$spam == -1, 0, 1);
+      return (ifelse( predict(fit, test, type = 'response') > 0.5, 1, -1))
+    } else {
+      return (ifelse( predict(fit, test, type = 'response') > 0.5, 1, 0))
+    }
+  });
+  
+}
 
-Utils$asses(SETS$test$spam , x);
+use = tree;
 
-print('--------------------------------');
+singleton = data.frame();
+enssemble = data.frame();
 
-p = tree(SETS$train)(SETS$test);
+for (i in 1:100) {
+  print(i);
+  DATA = DATA[sample(nrow(DATA)), ];
+  SETS = Utils$split(DATA);
+  
+  preds     = use(SETS$train)(SETS$test);
+  results   = Utils$asses(SETS$test$spam, preds);
+  singleton = rbind(singleton, results);
+  
+  preds     = Algo$adaboost(SETS$train, SETS$test, 100, use);
+  results   = Utils$asses(SETS$test$spam, preds);
+  enssemble    = rbind(enssemble, results);
+  
+}
 
-Utils$asses(SETS$test$spam, p);
+names(singleton) = c('Prec', 'Acc');
+names(enssemble) = c('Prec', 'Acc');
+
+write.csv(singleton, paste(ROOT, 'datasets/ada_single.csv', sep = ''));
+write.csv(enssemble, paste(ROOT, 'datasets/ada_enssemble.csv', sep = ''));

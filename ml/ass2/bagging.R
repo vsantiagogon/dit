@@ -5,14 +5,7 @@ source(paste(ROOT, 'common/Algo.R', sep = ''));
 
 Utils$getPkgs(c('foreach',  'doParallel', 'rpart',  'pROC', 'dplyr', 'SDMTools', 'curry'));
 
-DATA = read.csv(paste(ROOT, 'dataset/spam.csv', sep = ''));
-DATA = DATA[sample(nrow(DATA)), ];
-
-SETS = Utils$split(DATA);
-
-learner = list(
-  
-);
+DATA = read.csv(paste(ROOT, 'datasets/spam.csv', sep = ''));
 
 linear <- function (train, test) {
   
@@ -30,27 +23,27 @@ tree <- function (train, test) {
   return(preds);
 }
 
-weak_learners = tree;
+use = linear;
 
-##########################################################################
-# SINGLE MODEL
-##########################################################################
+singleton = data.frame();
+enssemble = data.frame();
 
-preds = weak_learners(SETS$train, SETS$test);
+for (i in 1:100) {
+  print(i);
+  DATA = DATA[sample(nrow(DATA)), ];
+  SETS = Utils$split(DATA);
+  
+  preds     = use(SETS$train, SETS$test);
+  results   = Utils$asses(SETS$test$spam, preds);
+  singleton = rbind(singleton, results);
+  
+  preds     = Algo$bagging(use, SETS$train, SETS$test, 400, 2);
+  results   = Utils$asses(SETS$test$spam, preds);
+  enssemble = rbind(enssemble, results);
+}
 
-##########################################################################
-# BAGGING
-##########################################################################
+names(singleton) = c('Prec', 'Acc'); 
+names(enssemble)    = c('Prec', 'Acc');
 
-bagged_preds = Algo$bagging(weak_learners, SETS$train, SETS$test, 400, 20);
-
-##########################################################################
-# COMPARE
-##########################################################################
-
-auc(SETS$test$spam, preds) %>% print;
-auc(SETS$test$spam, bagged_preds ) %>% print;
-
-print('----------------------------------------')
-Utils$asses(SETS$test$spam, preds);
-Utils$asses(SETS$test$spam, bagged_preds);
+write.csv(singleton, paste(ROOT, 'datasets/bagging_single.csv', sep = ''));
+write.csv(enssemble, paste(ROOT, 'datasets/bagging_enssemble.csv', sep = ''));

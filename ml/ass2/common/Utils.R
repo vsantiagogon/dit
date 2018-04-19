@@ -30,8 +30,7 @@ Utils = (function (path) {
       Precision = TP / (TP + FP); 
       MisRate  = (FP + FN) / TOTAL
       
-      print(mat);
-      cat('ACCURACY: ', Accuracy, ' PRECISION: ', Precision, ' Mis. Rate: ', MisRate)
+      return (c(Precision, Accuracy))
       
     }
     
