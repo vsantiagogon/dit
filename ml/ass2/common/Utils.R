@@ -2,6 +2,7 @@ Utils = (function (path) {
 
   return (list(
     
+    # Install if not exists. Then load.
     getPkgs = function (pkgs) {
       for (pkg in pkgs) {
         if (!(pkg %in% installed.packages())) install.packages(pkg);
@@ -9,6 +10,7 @@ Utils = (function (path) {
       } 
     },
     
+    # Split any dataframe into TRAIN & TEST datasets
     split = function (df, percentage = 0.7) {
       split = sample(nrow(df), floor(percentage*nrow(DATA)));
       return (list(
@@ -17,6 +19,7 @@ Utils = (function (path) {
       ));
     },
     
+    # Calculate Precission & Accuracy from confussion matrix.
     asses = function (test, pred) {
       # Finally, we show the results, using the confusion matrix.
       mat = confusion.matrix(test, pred)

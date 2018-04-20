@@ -1,3 +1,8 @@
+##############################################################################################
+# 100 executions of ADABOOST
+# The weak learner in use is parametrized.
+##############################################################################################
+
 ROOT = paste(getwd(), '/repos/dit/ml/ass2/', sep = '');
 
 source(paste(ROOT, 'common/Utils.R', sep = ''));
@@ -10,6 +15,7 @@ DATA = DATA[sample(nrow(DATA)), ];
 
 SETS = Utils$split(DATA);
 
+# This function is curryfied!!!
 tree = function (train, weights = c(), ada = FALSE) {
   labels = setdiff(names(train), 'spam');
   library('rpart')
@@ -28,6 +34,8 @@ tree = function (train, weights = c(), ada = FALSE) {
   })
 }
 
+
+# This function is curryfied!!!
 linear = function (train, weights = c(), ada = FALSE) {
   labels = setdiff(names(train), 'spam');
   
@@ -49,7 +57,7 @@ linear = function (train, weights = c(), ada = FALSE) {
   
 }
 
-use = tree;
+use = tree; # Last time I ran it, I used Tree weak learners. Change it.
 
 singleton = data.frame();
 enssemble = data.frame();

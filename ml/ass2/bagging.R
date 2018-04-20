@@ -1,3 +1,8 @@
+##############################################################################################
+# 100 executions of BAGGING
+# The weak learner in use is parametrized.
+##############################################################################################
+
 ROOT = paste(getwd(), '/repos/dit/ml/ass2/', sep = '');
 
 source(paste(ROOT, 'common/Utils.R', sep = ''));
@@ -23,7 +28,7 @@ tree <- function (train, test) {
   return(preds);
 }
 
-use = linear;
+use = linear; # Last time I ran it, I used logistic regression. Change it: linear || tree
 
 singleton = data.frame();
 enssemble = data.frame();
@@ -43,7 +48,7 @@ for (i in 1:100) {
 }
 
 names(singleton) = c('Prec', 'Acc'); 
-names(enssemble)    = c('Prec', 'Acc');
+names(enssemble) = c('Prec', 'Acc');
 
 write.csv(singleton, paste(ROOT, 'datasets/bagging_single.csv', sep = ''));
 write.csv(enssemble, paste(ROOT, 'datasets/bagging_enssemble.csv', sep = ''));
