@@ -8,7 +8,7 @@ Algo = (function (path) {
   return (list(
     
     
-    # Baggin algorithm
+    # Bagging algorithm
     
     # Input: 
     #   fn -> weak learner in use
