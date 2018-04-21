@@ -1,0 +1,12 @@
+total 2060
+drwxrwxr-x 4 victor victor    4096 Apr 21 22:40 ./
+drwxrwxr-x 9 victor victor    4096 Apr 21 21:48 ../
+-rw-rw-r-- 1 victor victor     169 Apr 21 22:38 checkpoint
+drwxrwxr-x 2 victor victor  122880 Apr 21 22:35 data/
+-rw-rw-r-- 1 victor victor    1200 Apr 21 22:37 encode.py
+-rw-rw-r-- 1 victor victor     797 Apr 21 22:36 neural_network.py
+drwxrwxr-x 2 victor victor    4096 Apr 21 22:37 __pycache__/
+-rw-rw-r-- 1 victor victor 1299609 Apr 21 22:38 tflearn.lstm.model.data-00000-of-00001
+-rw-rw-r-- 1 victor victor     805 Apr 21 22:38 tflearn.lstm.model.index
+-rw-rw-r-- 1 victor victor  650193 Apr 21 22:38 tflearn.lstm.model.meta
+-rw-rw-r-- 1 victor victor       0 Apr 21 22:40 wc
