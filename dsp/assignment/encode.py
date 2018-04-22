@@ -3,7 +3,7 @@ import numpy as np
 import librosa
 from random import shuffle
 
-def encoding(size = 10, path = 'data/'):
+def encoding(size = 10, path = 'data/raw/'):
   
   features = []
   labels = []

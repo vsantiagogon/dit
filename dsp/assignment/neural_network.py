@@ -5,9 +5,9 @@ import numpy as np
 
 from encode import encoding
 
-sample        = encoding(2403)
+sample        = encoding(10) # 2403
 learning_rate = 0.00001
-epochs        = 400
+epochs        = 20 # 400
 width         = 20 # Mel's features
 height        = 80
 classes       = 10 # digits
@@ -15,7 +15,7 @@ classes       = 10 # digits
 X, Y = next(sample);
 
 trainX, trainY = X, Y
-testX,  testY   = X, Y #overfit for now
+testX,  testY  = X, Y #overfit for now
 
 tflearn.init_graph(num_cores=8)
 
