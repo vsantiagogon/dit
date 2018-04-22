@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/victor/repos/dit/dsp/assignment/models/model.tflearn"
+all_model_checkpoint_paths: "/home/victor/repos/dit/dsp/assignment/models/model.tflearn"
