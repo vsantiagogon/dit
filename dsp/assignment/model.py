@@ -16,16 +16,22 @@ class Speech():
 		height        = 80
 		classes       = 10 # digits
 
-		tflearn.init_graph(num_cores = 4)
+		net = tflearn.input_data(shape=[None, width, height])
+		net = tflearn.fully_connected(net, 64)
+		net = tflearn.dropout(net, 0.5)
+		net = tflearn.fully_connected(net, classes, activation='softmax')
+		net = tflearn.regression(net, optimizer='adam', loss='categorical_crossentropy')
 
-		net   = tflearn.input_data(shape=[None, width, height])
-		net   = tflearn.lstm(net, 128, dropout = 0.8);
-		net   = tflearn.fully_connected(net, 64)
-		net   = tflearn.dropout(net, 0.5)
-		net   = tflearn.fully_connected(net, 164)
-		net   = tflearn.dropout(net, 0.5)
-		net   = tflearn.fully_connected(net, classes, activation='softmax')
-		net   = tflearn.regression(net, optimizer='adam', loss='categorical_crossentropy')
+		# tflearn.init_graph(num_cores = 4)
+
+		# net   = tflearn.input_data(shape=[None, width, height])
+		# net   = tflearn.lstm(net, 128, dropout = 0.8);
+		# net   = tflearn.fully_connected(net, 64)
+		# net   = tflearn.dropout(net, 0.5)
+		# net   = tflearn.fully_connected(net, 164)
+		# net   = tflearn.dropout(net, 0.5)
+		# net   = tflearn.fully_connected(net, classes, activation='softmax')
+		# net   = tflearn.regression(net, optimizer='adam', loss='categorical_crossentropy')
 
 		self.model = tflearn.DNN( net, tensorboard_verbose = 3);
 
